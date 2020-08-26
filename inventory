@@ -4,7 +4,6 @@ asible-exercise-vm2-nginx
 
 [swarm_init]
 asible-exercise-vm1-docker
-asible-exercise-vm2-nginx
 
 [swarm_init:vars]
 swarm_info=a

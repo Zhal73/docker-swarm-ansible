@@ -13,3 +13,7 @@
   docker_swarm:
     state: inspect
   register: swarm_info
+
+- name: print manager variable
+  debug:
+    msg: "variable content is {{ swarm_info }}"

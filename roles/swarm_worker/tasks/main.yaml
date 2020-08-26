@@ -1,7 +1,7 @@
 - name: print variable
   debug:
-    msg: "variable content is {{ swarm_info }}"
-
+          #msg: "variable content is {{ swarm_info['swarm_facts']['JoinTokens']['Worker'] }}"
+    msg: "variable content is {{ hostvars[groups['swarm_init'][0]]['swarm_info']['swarm_facts']['JoinTokens']['Worker'] }}" 
     #- name: Add nodes
   #docker_swarm:
           #state: join
@@ -16,5 +16,6 @@
   docker_swarm:
     state: join
     advertise_addr: swarm_worker
-    join_token: swarm_info.swarm_fact.JoinTokens.Worker
-    remote_addrs: asible-exercise-vm1-docker
+    join_token: "{{ hostvars[groups['swarm_init'][0]]['swarm_info']['swarm_facts']['JoinTokens']['Worker'] }}"
+    #join_token: "{{ swarm_info['swarm_facts']['JoinTokens']['Worker'] }}"
+    remote_addrs: asible-exercise-vm1-docker:2377

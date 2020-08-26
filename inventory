@@ -8,12 +8,6 @@ asible-exercise-vm1-docker
 [swarm_init:vars]
 swarm_info=a
 
-[swarm_manager]
-asible-exercise-vm1-docker
-
-[swarm_manager:vars]
-swarm_info=a
-
 [swarm_worker]
 asible-exercise-vm2-nginx
 
